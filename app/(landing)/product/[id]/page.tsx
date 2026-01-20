@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ProductActions from "../../components/product-detail/product-actions";
+import priceFormatter from "@/app/utils/price-formartter";
 
 const ProductDetail = () => {
   return (
@@ -27,11 +28,7 @@ const ProductDetail = () => {
           traction.
         </p>
         <div className="text-primary text-[32px] font-semibold mb-12">
-          {Intl.NumberFormat("id-ID", {
-            style: "currency",
-            currency: "IDR",
-            maximumSignificantDigits: 3,
-          }).format(458000)}
+          {priceFormatter(458000)}
         </div>
         <ProductActions />
       </div>
